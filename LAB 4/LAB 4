@@ -1,0 +1,182 @@
+q1
+import java.util.*;
+
+class Lab4Prg1 {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.set();
+        emp.get();
+    }
+}
+
+class Employee {
+    private int empId;
+    protected String empName;
+    String empDepartment;
+    Scanner sc = new Scanner(System.in);
+
+    public void set() {
+        System.out.println("Enter Employee ID, Name and Department");
+        int id = sc.nextInt();
+        String name = sc.next();
+        String department = sc.next();
+        empId = id;
+        empName = name;
+        empDepartment = department;
+    }
+
+    public void get() {
+        System.out.println("Employee Id : " + empId);
+        System.out.println("Employee Name : " + empName);
+        System.out.println("Employee Department : " + empDepartment);
+    }
+}
+
+//q2
+import java.util.*;
+class Lab4Prg2
+{
+    public static void main(String[] args)
+    {
+        Car obj = new Car();
+        String name = obj.getBrand();
+        System.out.println(name);
+    }
+}
+class Car
+{
+    String brand;
+    Scanner sc = new Scanner(System.in);
+    Car()
+    {
+        brand = "Ford";
+    }
+    public String getBrand()
+    {
+        return brand;
+    }
+}
+//q3
+import java.util.*;
+
+public class Lab4Prg3 {
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        student1.display();
+        Student student2 = new Student(10050,"Sanchit", 10, 10, 10, 10, 10);
+        student2.display();
+    }
+}
+
+class Student {
+    int rollNumber;
+    String name;
+    int marks1, marks2, marks3, marks4, marks5;
+    
+    Student() {
+        rollNumber = 0;
+        marks1 = marks2 = marks3 = marks4 = marks5 = 0;
+        name = "Unknown";
+    }
+    
+    Student(int roll, String studentName, int subject1Marks, int subject2Marks, int subject3Marks, int subject4Marks, int subject5Marks) {
+        rollNumber = roll;
+        name = studentName;
+        marks1 = subject1Marks;
+        marks2 = subject2Marks;
+        marks3 = subject3Marks;
+        marks4 = subject4Marks;
+        marks5 = subject5Marks;
+    }
+    
+    void display() {
+        System.out.println("Roll No. : " + rollNumber);
+        System.out.println("Name : " + name);
+        System.out.println("Marks in Subject 1 : " + marks1);
+        System.out.println("Marks in Subject 2 : " + marks2);
+        System.out.println("Marks in Subject 3 : " + marks3);
+        System.out.println("Marks in Subject 4 : " + marks4);
+        System.out.println("Marks in Subject 5 : " + marks5);
+    }
+}
+//q4
+import java.util.*;
+
+class Lab4Prg4 {
+    public static void main(String[] args) {
+        Student obj1 = new Student(50, "sanchit", 9, 7, 10, 6, 5);
+        obj1.calculateAverage();
+        Student obj2 = new Student(55, "arya", 9, 8, 7, 6, 11);
+        obj2.calculateAverage();
+        Student obj3 = new Student(52, "Satyam", 5, 8, 7, 6, 5);
+        obj3.calculateAverage();
+    }
+}
+
+class Student {
+    int roll;
+    String name;
+    int mark1, mark2, mark3, mark4, mark5;
+
+    Student(int r, String s, int m1, int m2, int m3, int m4, int m5) {
+        roll = r;
+        name = s;
+        mark1 = m1;
+        mark2 = m2;
+        mark3 = m3;
+        mark4 = m4;
+        mark5 = m5;
+    }
+
+    void calculateAverage() {
+        System.out.println("Average of " + name + " is: " + (mark1 + mark2 + mark3 + mark4 + mark5) / 5.0);
+    }
+}
+//q5
+import java.util.*;
+
+class Area
+{
+    int length, breadth, area;
+    Area(int... sides)
+    {
+        if(sides.length == 2)
+        {
+            length = sides[0];
+            breadth = sides[1];
+        }
+        else
+        {
+            length = sides[0];
+        }
+    }
+    Area()
+    {
+        length = 0;
+        breadth = 0;
+        area = 0;
+    }
+    void calculateArea()
+    {
+        if(breadth == 0)
+            area = length * length;
+        else
+            area = length * breadth;
+    }
+    void displayArea()
+    {
+        System.out.println("Area is : " + area);
+    }
+    public static void main(String[] args)
+    {
+        Area obj1 = new Area(10);
+        Area obj2 = new Area(8, 9);
+        Area obj3 = new Area();
+        obj1.calculateArea();
+        obj1.displayArea();
+        obj2.calculateArea();
+        obj2.displayArea();
+        obj3.calculateArea();
+        obj3.displayArea();
+    }
+} \

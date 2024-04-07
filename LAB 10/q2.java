@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab10;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author acer
+ */
+    
+public class q2 {
+    static int i=0;
+     int id;
+    String name;
+    int Age;
+    q2(String n,int ag){
+        name=n;
+        Age=ag;
+        id=++i;
+    } 
+    public void Show(){
+        System.out.println("ID is :"+id);
+        System.out.println("Name : "+name);
+        System.out.println("Age :"+Age);
+    }
+    public void nextId(int id){
+         System.out.println("NextID is : "+id);
+    }
+    public void finalize(){
+        System.out.println("No of Employee Reducing:"+(--i));
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        q2  ep1=new q2("Sanchit",20);
+        
+        q2 ep2=new q2("Arya",21);
+        
+        System.out.println("NO of Employee before joining:"+i);
+        q2 itrn1=new q2("Abhishek joshi",22);
+        
+        q2 itrn2=new q2("Abhishek joshi1",22);
+        System.out.println("NO of Employee afterr inter  joining:"+i);
+        itrn1=null;
+        itrn2=null;
+        System.gc();
+        System.out.println("NO of Employee after intern leaving:"+i);
+        
+        
+    }
+}
